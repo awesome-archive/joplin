@@ -89,12 +89,22 @@ https://github.com/laurent22/joplin/blob/master/readme/terminal.md
 	#toc {
 		padding-bottom: 1em;
 	}
+	.title {
+		display: flex;
+		align-items: center;
+	}
 	.title-icon {
-		height: 2em;
+		display: flex;
+		height: 1em;
+	}
+	.title-text {
+		display: flex;
+		font-weight: normal;
+		margin-bottom: .2em;
+		margin-left: .5em;
 	}
 	.sub-title {
-		font-weight: bold;
-		font-size: 1.5em;
+		font-weight: normal;
 	}
 	.container {
 		background-color: white;
@@ -151,6 +161,9 @@ https://github.com/laurent22/joplin/blob/master/readme/terminal.md
 	.header a h1 {
 		color: white;
 	}
+	.header a:hover {
+		text-decoration: none;
+	}
 	.content {
 		padding-left: 2em;
 		padding-right: 2em;
@@ -186,7 +199,9 @@ https://github.com/laurent22/joplin/blob/master/readme/terminal.md
 		padding-left: 2em;
 		margin-bottom: 0;
 		display: table-cell;
-		min-width: 250px;
+		/* min-width: 250px; */
+		/* For GSoC: */
+		min-width: 470px;
 	}
 	.nav ul li {
 		display: inline-block;
@@ -261,8 +276,8 @@ https://github.com/laurent22/joplin/blob/master/readme/terminal.md
 
 <div class="header">
 	<a class="forkme" href="https://github.com/laurent22/joplin"><img src="https://joplinapp.org/images/ForkMe.png"/></a>
-	<a href="https://joplinapp.org"><h1 id="joplin"><img class="title-icon" src="https://joplinapp.org/images/Icon512.png">oplin</h1></a>
-	<p class="sub-title">An open source note taking and to-do application with synchronisation capabilities.</p>
+	<a href="https://joplinapp.org"><h1 class="title"><img class="title-icon" src="https://joplinapp.org/images/Icon512.png"><span class="title-text">Joplin</span></h1></a>
+	<p class="sub-title">An open source note taking and to-do application with synchronisation capabilities</p>
 </div>
 
 <div class="nav-wrapper">
@@ -271,6 +286,7 @@ https://github.com/laurent22/joplin/blob/master/readme/terminal.md
 			<li class=""><a href="https:&#x2F;&#x2F;joplinapp.org/" title="Home"><i class="fa fa-home"></i></a></li>
 			<li><a href="https://discourse.joplinapp.org" title="Forum">Forum</a></li>
 			<li><a class="help" href="#" title="Menu">Menu</a></li>
+			<li><a class="gsoc" href="https://joplinapp.org/gsoc2020/" title="Google Summer of Code 2020">GSoC 2020</a></li>
 		</ul>
 		<div class="nav-right">
 			<!--
@@ -335,7 +351,7 @@ https://github.com/laurent22/joplin/blob/master/readme/terminal.md
 </tr>
 <tr>
 <td>Linux or Windows (via <a href="https://msdn.microsoft.com/en-us/commandline/wsl/faq?f=255&amp;MSPPError=-2147217396">WSL</a>)</td>
-<td><strong>Important:</strong> First, <a href="https://nodejs.org/en/download/package-manager/">install Node 8+</a>. Node 8 is LTS but not yet available everywhere so you might need to manually install it.<br/><br/><code>NPM_CONFIG_PREFIX=~/.joplin-bin npm install -g joplin</code><br/><code>sudo ln -s ~/.joplin-bin/bin/joplin /usr/bin/joplin</code><br><br>By default, the application binary will be installed under <code>~/.joplin-bin</code>. You may change this directory if needed. Alternatively, if your npm permissions are setup as described <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions#option-2-change-npms-default-directory-to-another-directory">here</a> (Option 2) then simply running <code>npm -g install joplin</code> would work.</td>
+<td><strong>Important:</strong> First, <a href="https://nodejs.org/en/download/package-manager/">install Node 10+</a>. <br/><br/><code>NPM_CONFIG_PREFIX=~/.joplin-bin npm install -g joplin</code><br/><code>sudo ln -s ~/.joplin-bin/bin/joplin /usr/bin/joplin</code><br><br>By default, the application binary will be installed under <code>~/.joplin-bin</code>. You may change this directory if needed. Alternatively, if your npm permissions are setup as described <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions#option-2-change-npms-default-directory-to-another-directory">here</a> (Option 2) then simply running <code>npm -g install joplin</code> would work.</td>
 </tr>
 <tr>
 <td>Arch Linux</td>
